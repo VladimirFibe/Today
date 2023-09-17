@@ -25,5 +25,14 @@ final class ReminderListViewController: UICollectionViewController {
         listConfiguration.backgroundColor = .clear
         return UICollectionViewCompositionalLayout.list(using: listConfiguration)
     }
+
+    override func collectionView(
+        _ collectionView: UICollectionView,
+           shouldSelectItemAt indexPath: IndexPath
+    ) -> Bool {
+        let id = reminders[indexPath.item].id
+        pushDetailViewForReminder(withId: id)
+        return false
+    }
 }
 
