@@ -6,7 +6,7 @@ class ReminderListViewController: UICollectionViewController {
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
     
     var dataSource: DataSource!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let listLayout = listLayout()
@@ -30,7 +30,6 @@ class ReminderListViewController: UICollectionViewController {
         
         collectionView.dataSource = dataSource
     }
-
 
     private func listLayout() -> UICollectionViewCompositionalLayout {
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
