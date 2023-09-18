@@ -5,6 +5,7 @@ final class ReminderListViewController: UICollectionViewController {
     var reminders: [Reminder] = Reminder.sampleData
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = NSLocalizedString("Today", comment: "Today view controller title")
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
         
