@@ -78,12 +78,12 @@
 			children = (
 				02D816ED2AB76F030046494F /* App */,
 				02324B762972355900AA02D4 /* Models */,
+				02D816F02AB76F240046494F /* ReminderViewController */,
 				02543E6B2AB6A11100D163E9 /* ReminderListViewController */,
 				0215ED282971C552004BBBBE /* Main.storyboard */,
 				0215ED2B2971C554004BBBBE /* Assets.xcassets */,
 				0215ED2D2971C554004BBBBE /* LaunchScreen.storyboard */,
 				0215ED302971C554004BBBBE /* Info.plist */,
-				02D816F02AB76F240046494F /* ReminderViewController */,
 			);
 			path = Today;
 			sourceTree = "<group>";
