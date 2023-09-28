@@ -7,12 +7,18 @@ class ReminderViewController: UICollectionViewController {
     NSDiffableDataSourceSnapshot<Section, Row>
 
     private var dataSource: DataSource!
-    var reminder: Reminder
+    var reminder: Reminder {
+        didSet {
+            onChange(reminder)
+        }
+    }
     var workingReminder: Reminder
+    var onChange: (Reminder) -> Void
 
-    init(reminder: Reminder) {
+    init(reminder: Reminder, onChage: @escaping (Reminder) -> Void) {
         self.reminder = reminder
         self.workingReminder = reminder
+        self.onChange = onChage
         var listConfiguration = UICollectionLayoutListConfiguration(
             appearance: .insetGrouped
         )
