@@ -52,7 +52,10 @@ extension ReminderListViewController {
     func pushDetailViewForReminder(withId id: Reminder.ID) {
         let reminder = reminder(withId: id)
         let viewController = ReminderViewController(reminder: reminder)
-        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(
+            viewController,
+            animated: true
+        )
     }
 
     private func updateReminder(_ reminder: Reminder) {
@@ -67,8 +70,13 @@ extension ReminderListViewController {
         updateSnapshot(reloading: [id])
     }
 
-    private func doneButtonAccessibilityAction(for reminder: Reminder) -> UIAccessibilityCustomAction {
-        let name = NSLocalizedString("Toggle completion", comment: "Reminder done button accessiblity label")
+    private func doneButtonAccessibilityAction(
+        for reminder: Reminder
+    ) -> UIAccessibilityCustomAction {
+        let name = NSLocalizedString(
+            "Toggle completion",
+            comment: "Reminder done button accessiblity label"
+        )
         let action = UIAccessibilityCustomAction(name: name) { [weak self] action in
             self?.completeReminder(withId: reminder.id)
             return true
@@ -78,8 +86,13 @@ extension ReminderListViewController {
 
     private func doneButtonConfiguration(for reminder: Reminder) -> UICellAccessory.CustomViewConfiguration {
         let symbolName = reminder.isComplete ? "circle.fill" : "circle"
-        let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
-        let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
+        let symbolConfiguration = UIImage.SymbolConfiguration(
+            textStyle: .title1
+        )
+        let image = UIImage(
+            systemName: symbolName,
+            withConfiguration: symbolConfiguration
+        )
         let button = ReminderDonButton()
         button.id = reminder.id
         button.addTarget(self, action: #selector(didPressDoneButton), for: .primaryActionTriggered)

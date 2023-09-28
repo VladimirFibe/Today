@@ -2,11 +2,14 @@ import UIKit
 
 extension ReminderViewController {
     enum Row: Hashable {
+        case header(String)
         case date
         case notes
         case time
         case title
-
+        case editableText(String?)
+        case editableDate(Date)
+        
         var imageName: String? {
             switch self {
             case .date: return "calendar.circle"
@@ -17,9 +20,14 @@ extension ReminderViewController {
         }
 
         var image: UIImage? {
-            guard let imageName = imageName else { return nil }
-            let configuration = UIImage.SymbolConfiguration(textStyle: .headline)
-            return UIImage(systemName: imageName, withConfiguration: configuration)
+            guard let imageName else { return nil }
+            let configuration = UIImage.SymbolConfiguration(
+                textStyle: .headline
+            )
+            return UIImage(
+                systemName: imageName,
+                withConfiguration: configuration
+            )
         }
 
         var textStyle: UIFont.TextStyle {

@@ -11,11 +11,20 @@ extension ReminderViewController {
             switch self {
             case .view: return ""
             case .title:
-                return NSLocalizedString("Title", comment: "Title section name")
+                return NSLocalizedString(
+                    "Title",
+                    comment: "Title section name"
+                )
             case .date:
-                return NSLocalizedString("Date", comment: "Date section name")
+                return NSLocalizedString(
+                    "Date",
+                    comment: "Date section name"
+                )
             case .notes:
-                return NSLocalizedString("Notes", comment: "Notes section name")
+                return NSLocalizedString(
+                    "Notes",
+                    comment: "Notes section name"
+                )
             }
         }
     }
